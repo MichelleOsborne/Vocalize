@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif ;
+  
+    
+    
+}
+
+body{
+    background-image: url('singer.jpg');
+    background-size: 90% 60%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y:center;
+    margin-bottom: 50%;  
+} 
+
+header{
+    background-color: white;
+    box-shadow: darkgray;
+}
+
+.image{
+    float: left;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 142px;    
+}
+
+header nav h1{
+    font-size: 70px;
+    font-weight: 600;
+}
+
+header nav .tabs {
+    list-style-type:none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav .tabs .tab{
+    display: block;
+}
+
+header nav .tabs .tab a[data-one]{
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+header nav .tabs .tab a{
+    display: block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+header nav .tabs .tab:hover a[data-one]{
+    background-color: whitesmoke;
+    color: black;
+   
+}
+
+header nav .tabs .tab:hover a{
+    background-color: whitesmoke;
+    color: black;
+   
+}
+
+header nav .tabs .tab.is-active a[data-one]{
+    background-color: black;
+    color: white;
+    font-weight: 700;
+}
+
+
+main{
+    padding-left: 30px;
+
+}
+
+nav ul{
+    list-style: none;
+}
+
+.pages{
+    margin-top: 100px;
+    padding: 50px 30px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: black;
+}
+
+.pages .page{
+    display: none;
+
+}
+
+.pages .page.is-active{
+    display: block;
+}
+
+section1 {
+    
+    float: left;
+    height: 500px;
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    opacity: 0.8;
+    overflow: scroll;
+}
+
+section2 {
+    
+    float: left;
+    height: 500px;
+    width: 30%;
+    opacity: 0.8;
+    padding: 15px;
+    margin: 15px;
+
+}
+
+section3 {
+    
+    float: left;
+    height: 500px;
+    width: 25%;
+    padding: 10px;
+    margin: 10px;
+    opacity: 0.8;
+}
+
+section4 {
+    
+    float: left;
+    height: 400px;
+    width: 60%;
+    opacity: 0.9;
+    padding: 10px;
+    margin: 10px;
+}
+
+section5 {
+    
+    float: left;
+    height: 500px;
+    
+    width: 25%;
+    opacity: 0.8;
+    padding: 5px;
+    margin: 10px;
+    overflow: scroll;
+}
+section6 {
+    
+    float: left;
+    height: 500px;
+    width: 75%;
+    opacity: 0.8;
+    padding: 5px;
+    margin: 30px;
+    overflow: scroll;
+}
+
+.top {
+    overflow: hidden;
+    background: black;
+}
+
+.top a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 12px;
+    text-decoration: none;
+}
+  
+.button2 {
+  
+    border-color: white;  
+    border-width: medium;
+    color: white;
+    background-color: black;
+    padding: 20px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 12px;
+    width: 60%; 
+}
+
+.button3 {
+  
+    border-color: white;  
+    border-width: medium;
+    color: white;
+    background-color: black;
+    padding: 20px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 12px;
+    width: 60%; 
+}
+.button4 {
+  
+    border-color: white;  
+    border-width: medium;
+    color: white;
+    background-color: black;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 12px;
+    width: 60%; 
+}
+
+.button2:hover {
+    background-color: whitesmoke;
+    color: black;
+   
+}
+.button3:hover {
+    background-color: whitesmoke;
+    color: black;
+   
+}
+table {
+    font-family: arial, sans-serif;
+    
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid black;
+   
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
