@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS files/timer.css" />
+  
+    <script src="./JS files/switch_views.js"></script>
+
+    <title>Siren</title>
+  </head>
+  <body>
+
+     <div>   
+              
+                <button class = "button" onclick="document.location='Home.html'">Home</a></button>
+             
+                <button class = "button" onclick="goBack()">Back</a></button>
+  
+ 
+              </div> 
+
+
+    <div class="app">
+      <div class="vidsound">
+        <video autoplay loop >
+          <source src="./video/siren3.mp4"  type="video/mp4">
+        </video>
+        </div>
+        <div class="timer">
+            <button data-time="120"> 2 Minutes</button>
+            <button data-time="180" >3 Minutes</button>
+            <button data-time="240"> 4 Minutes</button>
+          </div>
+        
+        <div class="player-container">
+          
+            <audio class="song">
+                <source src="./sounds/Siren- E2-E4.mp3" />
+   
+              </audio>
+              <img src="./images/playit.svg" class="play"></img>
+                          
+             
+              <svg  viewBox="0 0 453 453" fill="none" >
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="#018EBA" stroke-width="20"/>
+              </svg>
+
+              <p style="color:white;" class="replay" > Restart</p>
+            
+                <h3 class="time-display">0:00</h3>      
+      </div>
+
+
+
+      <div class="sound_selection">
+        <button data-sound="./sounds/Siren - C4-C6.mp3" data-video="./video/siren2.mp4"><h1>1</h1></button>
+        <button data-sound="./sounds/Siren - G2-G4.mp3" data-video="./video/siren1.mp4"><h1>2</h1></button>
+
+      </div>
+    </div>
+    <script src="./JS files/timer.js"></script>
+   
+  </body>
+</html>

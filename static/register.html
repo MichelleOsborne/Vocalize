@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="./CSS files/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+   
+    <link rel="stylesheet" href="style.css">
+    <script src="./JS files/switch_views.js"></script>
+    <script src="student.js"></script>
+    <script src="./JS files/vocalist.js"></script>
+    
+    <title>index</title>
+   
+    <title>register</title>
+</head>
+
+<body ng-app="mainApp" >
+
+
+
+
+<header>
+<nav>
+  <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+  <h1>Vocalize </h1>
+  <ul class="tabs">
+      <li class = "tab is-active ">
+        <a href="Home.html">Home</a>
+      </li>
+      <li class = "tab" >
+          <a onclick="goBack()">Back</a>
+      </li>
+
+      
+  </ul>
+</nav>
+</header>
+
+<div class="top">
+
+<a href="SingingBasics.html">Singing Basics</a>
+<a href="Soundref.html">Sound References</a>
+
+</div>
+
+
+
+
+
+
+
+<section4 class="pages"> 
+
+  <div ng-controller="vocalistController">
+
+
+    <body ng-app="mainApp" >
+  
+ 
+      <section4 class="pages"> 
+      
+          <div ng-app="mainApp" ng-controller="vocalistController">
+      
+      
+          <th>Title</th>
+          <table border=1>
+              <tr>
+      
+                  
+                  <th>First_Name</th>
+                  <th>Last_Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                </tr>
+                <tr ng-repeat = "vocalist in vocalists">
+                  
+                  <td>{{ vocalist.First_Name }}</td>
+                  <td>{{ vocalist.Last_Name }}</td>
+                  <td>{{ vocalist.Email }}</td>
+                  <td>{{ vocalist.Password }}</td>
+                 
+                  <td><input type="button" ng-click="selectVocalist(vocalist.User_Id)" value="Select"></td>
+                  <td><input type="button" ng-click="deleteVocalist(vocalist.User_Id)" value="Delete"></td>
+                </tr> 
+                <tr>
+                      
+                  <td><input type="text" ng-model="vocalist.First_Name"></td>
+                  <td><input type="text" ng-model="vocalist.Last_Name"></td>
+                  <td><input type="text" ng-model="vocalist.Email "></td>
+                  <td><input type="text" ng-model="vocalist.Password"></td>
+                  
+                  <td><input type="button" ng-click="createVocalist()" value="Create"></td>
+                
+                  </tr>
+      
+      </table>
+      
+                <tr>
+                  
+                  <div id="selected">
+                
+                    <table border=1>
+                    <tr>
+                      
+                  <th>Id</th>
+                  <th>First_Name</th>
+                  <th>Last_Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                     
+                    </tr>
+                    <tr>
+                      
+                    
+                    <td>{{ selectedVocalist.User_Id}}</td>
+                    <td>{{ selectedVocalist.First_Name}}</td>
+                    <td>{{ selectedVocalist.Last_Name}}</td>
+                    <td>{{ selectedVocalist.Email}}</td>
+                    <td>{{ selectedVocalist.Password}}</td>
+                    
+          
+                    </tr>
+                    </table>
+      
+                    </div>
+      </section4>
+
+      </body>

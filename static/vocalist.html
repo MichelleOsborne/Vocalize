@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+
+    <link rel="stylesheet" href="./CSS files/style.css">
+    
+    <script src="./JS files/switch_views.js"></script>
+    <script src="student.js"></script>
+    <script src="./JS files/ob_exercise.js"></script>
+    <script src="./JS files/vocalist.js"></script>
+     
+</head>
+
+<header>
+    <nav>
+        <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+        <h1>Register</h1>
+        <Div></Div>
+        <ul class="tabs">
+          
+            </li>
+           
+      
+            
+        </ul>
+    </nav>
+</header>
+
+<body >
+
+  <div class="top">
+    
+   
+</div>
+
+
+ 
+       
+      
+      <body ng-app="mainApp" >
+      
+     
+
+
+<section1 class="pages"> 
+
+        <div ng-app="mainApp" ng-controller="vocalistController">
+
+     
+        <h2>Vocalists Restristration</h2>
+        <br>
+        <br>
+        <table border=1>
+              <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                
+              </tr>
+
+           
+              
+              <td><input type="text" ng-model="new_vocalist.First_Name"></td>
+              <td><input type="text" ng-model="new_vocalist.Last_Name"></td>
+              <td><input type="text" ng-model="new_vocalist.Email  "></td>
+              <td><input type="text" ng-model="new_vocalist.Password"></td>
+              
+              <td><input type="button" ng-click="createVocalist()" value="Register"></td>
+              
+               
+            </table>
+
+
+        
+
+            <br>
+            <br>
+
+            <div id="selected"></div>
+              
+              <h1> Fill in the information above to log in </h1> 
+
+              <div ><a href="index.html"><button class="button2">Log In</button></a></div>
+
+
+
+
+      </div>
+          </div>
+         
+
+</section1>
+
+    
+</body>
+
+
+
+
+</html>

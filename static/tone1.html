@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tone</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+
+    <link rel="stylesheet" href="./CSS files/style.css">
+    
+    <script src="./JS files/switch_views.js"></script>
+    <script src="student.js"></script>
+    <script src="./JS files/ob_exercise.js"></script>
+
+   
+    
+     
+</head>
+
+<header>
+    <nav>
+        <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+        <h1>Vocalize Tone</h1>
+        <ul class="tabs">
+            <li class = "tab is-active ">
+              <a href="Home.html">Home</a>
+            </li>
+            <li class = "tab" >
+                <a onclick="goBack()">Back</a>
+            </li>
+      
+            
+        </ul>
+    </nav>
+</header>
+
+<body ng-app="mainApp">
+
+  <div class="top">
+    
+    <a href="SingingBasics.html">Singing Basics</a>
+    <a href="Soundref.html">Sound References</a>
+</div>
+
+
+ 
+    
+        
+<section3 class="pages">
+  <h1>Good day you</h1>
+
+  
+  <br>
+  <h2> You have said you are a level 1 </h2>
+
+
+  <br>
+  <br>
+  <br>
+           
+    
+    <div class="time-select">
+      <button data-time="60" >1 Minutes</button>
+      <button data-time="120" >2 Minutes</button>
+      <button data-time="180"> 5 Minutes</button>
+      <h3 id ="title" class="time-display" style="font-size:5vw">0:00</h3> 
+  </div>
+  
+  
+  <button id ="my-button">Stopwatch</button>
+  <button  onclick="Start()" >Start</button>
+  <button onclick="endCount()">Stop</button>
+  
+  
+  
+  <script src="./JS files/timer1.js"></script>
+ 
+</section3>
+
+
+
+        <section1 class="pages">
+        
+       
+           
+            <div  ng-controller="tonesoundlevel1Controller">
+      
+                <br>
+                <h1>Beginner Tone sounds</h1>
+                <br>
+                <p> The vocal sounds displayed are most suited for warm ups at this level. </p>
+                
+                <br>
+                <br>
+  
+      
+              <table border=1>
+                <tr>
+                  
+                  <th>Vocal Sound</th>
+                  
+                  <th>audio demo</th>
+  
+  
+                  
+                  
+                </tr>
+                <tr ng-repeat = "tonesoundlevel in tonesoundlevels">
+                  
+                  <td>{{tonesoundlevel.Vocal_sound }}</td>
+                  
+                  <td><audio controls><source src="{{ tonesoundlevel.Audio_demo }}" type="audio/mpeg"></audio></td>
+                 
+                </tr>
+              </table>
+        
+            </div>
+        <br>
+        <br>
+           
+           
+           
+           
+            <div ng-controller="tonelevel1Controller">
+            
+            
+                <h2>Tone exercises</h2>
+                <br>
+                <br>
+                <table border=1>
+                      <tr>
+                        <th>objective</th>
+                        <th>Exercise</th>
+                        <th>Level</th>
+                        <th>Description</th>
+                        <th>Start</th>
+                        
+                      </tr>
+                      <tr ng-repeat = "tonelevel in tonelevels">
+                        <td>{{ tonelevel.Ob_Name}}</td>
+                        <td>{{ tonelevel.Ex_Name }}</td>
+                        <td>{{ tonelevel.Level }}</td>
+                        <td>{{ tonelevel.DESCRIPTION }}</td>
+                        <td><a href= "{{tonelevel.start}}" >{{ rangelevel.start}}</a></td>
+                      </tr>
+                                              
+                </table>
+              
+    
+</div>
+      </section1>
+
+
+    
+</body>
+</html>

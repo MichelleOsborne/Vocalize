@@ -1,0 +1,347 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Warm Up</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+
+    <link rel="stylesheet" href="./CSS files/style.css">
+    
+    <script src="./JS files/switch_views.js"></script>
+    <script src="student.js"></script>
+    
+  
+
+    <script>
+    var mainApp = angular.module("mainApp", []);
+mainApp.controller("warmupController", function($scope, $http) {
+  $http.get('/warmups').then(function(response) {
+    $scope.warmups = response.data;
+  });
+});
+
+mainApp.controller("warmuplevel1Controller", function($scope, $http) {
+  $http.get('/warmuplevels/1').then(function(response) {
+    $scope.warmuplevels = response.data;
+  });
+});
+
+mainApp.controller("warmuplevel2Controller", function($scope, $http) {
+  $http.get('/warmuplevels/2').then(function(response) {
+    $scope.warmuplevels = response.data;
+  });
+});
+
+mainApp.controller("warmuplevel3Controller", function($scope, $http) {
+  $http.get('/warmuplevels/3').then(function(response) {
+    $scope.warmuplevels = response.data;
+  });
+});
+      mainApp.controller("objectivesoundlevelController", function($scope, $http) {
+        $http.get('/objectivesoundlevels').then(function(response) {
+          $scope.objectivesoundlevels = response.data;
+        });
+      });
+      
+      
+      mainApp.controller("warmupsoundlevel1Controller", function($scope, $http) {
+        $http.get('/warmupsoundlevels/1').then(function(response) {
+          $scope.warmupsoundlevels = response.data;
+        });
+      });
+      mainApp.controller("warmupsoundlevel2Controller", function($scope, $http) {
+        $http.get('/warmupsoundlevels/2').then(function(response) {
+          $scope.warmupsoundlevels = response.data;
+        });
+      });
+      mainApp.controller("warmupsoundlevel3Controller", function($scope, $http) {
+        $http.get('/warmupsoundlevels/3').then(function(response) {
+          $scope.warmupsoundlevels = response.data;
+        });
+      });
+      
+      </script>
+
+    
+
+
+     
+</head>
+
+<header>
+  <nav>
+      <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+      
+      <h1>Vocalize Range</h1>
+      <ul class="tabs">
+          <li class = "tab is-active ">
+            <a href="index.html">Home</a>
+          </li>
+          <li class = "tab" >
+              <a onclick="goBack()">Back</a>
+          </li>
+    
+          
+      </ul>
+  </nav>
+</header>
+
+
+
+
+
+<body ng-app="mainApp">
+
+<div class="top">
+  <a href="SingingBasics.html">Singing Basics</a>
+  <a href="Soundref.html">Sound References</a>
+</div>
+
+
+<section2 class="pages">
+
+  
+
+
+  <div  ng-controller="warmupsoundlevel1Controller">
+      
+    <br>
+    <h1>Quick Warm Ups</h1>
+    
+    <br>
+    <p> The vocal sounds displayed are most suited for warm ups at this level. </p>
+    
+    <br>
+    <br>
+
+
+  <table border=1>
+    <tr>
+      
+      <th>Vocal Sound</th>
+      
+      <th>audio demo</th>
+
+
+      
+      
+    </tr>
+    <tr ng-repeat = "warmupsoundlevel in warmupsoundlevels">
+      
+      <td>{{warmupsoundlevel.Vocal_sound }}</td>
+      
+      <td><audio controls><source src="{{ warmupsoundlevel.Audio_demo }}" type="audio/mpeg"></audio></td>
+    
+    </tr>
+  </table>
+
+</div>
+<br>
+<br>
+       
+
+              <table border=1>
+                <tr>
+                  <th>Exercise Name</th>
+                  <th> Select</th>
+                  
+                  
+                </tr>
+
+                
+                <tr>
+                  
+                  <td>Scale A</td>
+                  
+                                    
+                     <td><button class="tabs"><li class = "tab is-active">
+                      <a data-one data-tab ="1">Home</a>
+                  </li></button></td>
+                </div>                
+                
+                </tr>
+                <tr>
+                  
+                  <td>Scale B</td>
+                  
+                
+                  <td><button class="tabs"><li class = "tab">
+                    <a data-one data-tab ="2">Home</a>
+                </li></button></td>
+                </tr>
+              
+                <tr>
+                  
+                  <td>Scale C</td>
+                  
+               
+
+                    <td><button class="tabs"><li class = "tab ">
+                      <a data-one data-tab ="3">Home</a>
+                  </li></button></td>               
+                
+                </tr>
+
+                <tr>
+                  
+                  <td>Arpeggios</td>
+                  
+                 
+
+                  <td><button class="tabs"><li class = "tab ">
+                    <a data-one data-tab ="4">Home</a>
+                </li></button></td>
+                </tr>
+
+              </table>
+
+             
+      
+            
+          </section2>
+
+       
+ 
+  <section2 class="pages">
+    <div class = "page is-active" data-page="1">   
+             
+          <div class="content">
+        
+        <h1>Scales</h1>
+        <br>
+        <br>
+        <p>Copy the scales. </p>
+       
+       
+      </div>
+
+
+      <div>   
+        <video  width="460" height = " 500"  controls>
+          <source src="./video/VOCAL WARM UPS 1.mp4" type="video/mp4">
+        </video>
+      </div>
+    
+    </div>
+     
+
+      <div class = "page" data-page="2">
+        <div class="content">
+
+          <h1>Scales</h1>
+          <br>
+          <br>
+          <p>Copy the scales. </p>
+          <br>
+          <br>
+          <button id="myBtn" onclick="myPlayFunction()">Pause</button>
+        </div>
+
+      <div>   
+        <video  width="460" height = " 500"  controls>
+            <source src="./video/VOCAL WARM UPS 2.mp4" type="video/mp4">
+          </video>
+      </div>
+   
+    </div>
+
+          
+
+      <div class = "page" data-page="3">
+        <div class="content">
+          <h1>Scales</h1>
+          <br>
+          <br>
+        <p>Copy the scales. </p>
+        <br>
+        <br>
+        <button id="myBtn" onclick="myPlayFunction()">Pause</button>
+        </div>
+
+        <div>   
+          <video  width="460" height = " 500"  controls>
+              <source src="./video/VOCAL WARM UPS 3.mp4" type="video/mp4">
+            </video>
+        </div>
+       
+      </div>
+         
+      
+
+
+      <div class = "page" data-page="4">
+       
+        <div class="content">
+          <h1>Arpeggios</h1>
+          <br>
+          <br>
+          <p>Copy the Arpeggio example</p>
+          <br>
+          <br>
+         
+          <button id="myBtn" onclick="myPlayFunction()">Pause</button>
+        </div>
+     
+
+        <div>   
+          <video  width="460" height = " 500"  controls>
+              <source src="./video/VOCAL WARM UPS 6.mp4" type="video/mp4">
+            </video>
+        </div>
+       
+      </div>  
+
+      <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        
+        function myPlayFunction() {
+          if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+          } else {
+            video.pause();
+            btn.innerHTML = "Play";
+          }
+        }
+        </script>
+
+    
+       
+     
+   
+
+     
+    
+
+    
+  </section2>
+
+
+    <section3 class="pages">
+           
+    
+      <div class="time-select">
+        <button data-time="60" >1 Minutes</button>
+        <button data-time="120" >2 Minutes</button>
+        <button data-time="180"> 5 Minutes</button>
+        <h3 id ="title" class="time-display" style="font-size:5vw">0:00</h3> 
+    </div>
+   
+    
+  <button id ="my-button">Stopwatch</button>
+  <button  onclick="Start()" >Start</button>
+  <button onclick="endCount()">Stop</button>
+
+
+
+<script src="./timer1.js"></script>
+  </section3>
+   
+  
+</body>
+  
+
+</html>

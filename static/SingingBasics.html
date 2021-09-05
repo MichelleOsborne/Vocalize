@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="practice.css">
-    <script src="practice.js"></script>
+    <link rel="stylesheet" href="./CSS files/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="./JS files/switch_views.js"></script>
+    <script src="./JS files/all_exercises.js"></script>
 
     <title>Singing Basics</title>
 </head>
 
 <header>
     <nav>
-        <div class="image"><img src="singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+        <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
         <h1>Vocalize </h1>
         <ul class="tabs">
             <li class = "tab is-active ">
-                <a href="practice2.html">Home</a>
+                <a href="Home.html">Home</a>
             </li>
             <li class = "tab" >
                 <a onclick="goBack()">Back</a>
@@ -29,48 +31,147 @@
 
 <div class="top">
     
-    <a href="SingingBasics.html">Singing Basics</a>
+    
     <a href="Soundref.html">Sound References</a>
+    
 </div>
 
 
+<body >
+    
 
-
-<body>
-    <main>
-
-        <section5 class="pages">
+        <section3 class="pages">
+            
             <ul class="tabs">
+                
                 <button class="button3"><li class = "tab is-active "><a data-one data-tab ="1">Basics</a></li></button>
-                <button class="button3"><li class = "tab"><a data-one data-tab ="2">Range</a></li></button>
-                <button class="button3"><li class = "tab"><a data-one data-tab ="3">Control</a></li></button>
-                <button class="button3"><li class = "tab is-active "><a data-one data-tab ="1">Pitch</a></li></button>
-                <button class="button3"><li class = "tab"><a data-one data-tab ="2">Tone</a></li></button>
-               
+                <button class="button3"><li class = "tab"><a data-one data-tab ="6">Breathing</a></li></button>
+                <div class="dropdown">
+                    <div class="dropbtn">
+                    <button  class="button3" >Objectives</button>
+                    <div class="dropdown-content">
+                        
+                    <button class = "tab"><a data-one data-tab ="2">Range</a></li></button>  
+                    <button class = "tab"><a data-one data-tab ="3">Control</a></li></button> 
+                    <button class = "tab"><a data-one data-tab ="4">Pitch</a></li></button> 
+                    <button class = "tab"><a data-one data-tab ="5">Tone</a></li></button> 
+                    </div>
+                    </div></div>
+                           
             
             </ul>
 
-        </section5>
+        </section3>
      
-        <section4 class="pages">
+        <section1 class="pages">
+
+
+          
             <div class = "page is-active" data-page="1">          
-                <h2>Page 1</h2>
-                <p>BEGINNER EXERCISES</p>
+                <h2>Exercises</h2>
+                <br>
+                <br>
+                <div ng-app="mainApp" ng-controller="exerciseController">
+                    <table border=1>
+                      <tr>
+                        
+                        <th>Name</th> 
+                        <th>Description</th>
+                        <th>Demostration</th>
+                        
+                      </tr>
+                      <tr ng-repeat = "exercise in exercises">
+                        
+                        <td>{{ exercise.Ex_Name }}</td>
+                        <td>{{ exercise.Description }}</td>
+                        <td><audio controls><source src="{{ exercise.Demonstration }}" type="audio/mpeg"></audio></td>
+           
+                      </tr>
+                    </table>
+                  </div>
+
+
+
+
             </div>
 
             <div class = "page" data-page="2">
-                <h2>Page 2</h2>
-                <p>INTERMEDIATE EXERCISES</p>
+                <h2>Range</h2>
+                <br>
+                <br>
+                <p> Finding your vocal range is one of the most important things you can know about yourself as a singer.
+                    That is because learning your vocal range will help you understand how low or high you can sing.
+                    Vocal range is a measurement of distance from the lowest note to the highest note that a person can sing. Vocal range is very helpful in defining a singer’s voice type (Bass, Tenor, Alto, Soprano, for example), measuring vocal progress over time and choosing songs and repertoire that fit a singer’s voice.
+                    The goal of Vocal training is to empower the singer with Consistency, Fluidity, and Mastery over the widest range of notes possible.
+                    The overall range of the voice is split into different registers.
+                    The aim of the vocalist is to navigate their entire range and sing as if it were one voice of consistent tonal quality.
+                    
+                    Vocal Fry
+                    The rough and crackly vocal fry is the lowest of the vocal registers.it does not produce a full tone. Rather it is used as an effect in certain styles of singing.
+                    
+                    Chest voice
+                    
+                    The chest voice is the register in which most people speak throughout the day, and it produces the fullest tone of all the registers
+                    
+                    Middle voice
+                    
+                    The middle voice is not actually a unique register but rather a mixture of the resonance found in chest voice and head voice. 
+                    Developing a strong middle voice enables you to navigate between chest and head voice with consistency and without the voice breaking.
+                    Head voice 
+                    The head voice is higher than the chest voice and produces a naturally lighter tone. 
+                    Strengthening the head voice aids the tonal quality of the middle voice.
+                    
+</p>
             </div>
             <div class = "page" data-page="3">
-                <h2>Page 3</h2>
-                <p>ADVANCED EXERCISES</p>
+                <h2>Control</h2>
+                <br>
+                <br>
+                <p>Vocal control means mastering the basic foundations of singing and being able to apply them to your performances.
+                    Vocal control has two parts:
+
+                    1. Mastering singing fundamentals and
+
+                    2. Applying them to your performances.
+
+                    That means that you need to understand the fundamentals of singing and work with exercises to help you get there.
+                    </p>
+            </div>
+            <div class = "page" data-page="4">
+                <h2>Pitch</h2>
+                <br>
+                <br>
+                <p>Voice pitch is a frequency, uniform soundwaves attributed to a musical note. (Just like on a piano). What makes pitches of voice unique is how uniform the sound waves are of the tone and the frequency or pattern the pitch travels in.
+                    The human ear picks up on the uniform frequency and recognizes it as a pitch or note.
+                    </p>
+            </div>
+            <div class = "page" data-page="5">
+                <h2>Tone</h2>
+                <br>
+                <br>
+                <p>Tone suggests your mood and your intention towards the listener, eg happy or sad.
+                    
+                    The human voice is an extremely expressive and versatile instrument and no 2 voices ever sound exactly the same 
+                    Vocal tone describes the quality and characteristics of the voice.
+                    
+                </p>
             </div>
 
-        </section4>
+            <div class = "page" data-page="6">
+                <h2>Breathing</h2>
+                <br>
+                <br>
+                <p>Breath control is so inportant for singers
+                    
+                <iframe width="600" height="415"src="https://www.youtube.com/embed/CBvtyPlzAPo" ></iframe>
+                    
+                </p>
+            </div>
+
+        </section1>
 
     
-</main>
+
     
 </body>
 </html>

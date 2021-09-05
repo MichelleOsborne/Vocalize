@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="practice.css">
-    <script src="practice.js"></script>
-
+    <link rel="stylesheet" href="./CSS files/style.css">
+    <link rel="stylesheet" href="./CSS files/videobackground.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="./JS files/switch_views.js"></script>
+    <script src="student.js"></script>
+    <script src="./JS files/singalong.js"></script>
+   
+    
     <title>Sound References</title>
+    
+  
+
 </head>
+      
+<body ng-app="mainApp" >
+      
+    <video autoplay muted loop id="myVideo">
+        <source src="./video/black.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+      
+
 
 <header>
     <nav>
-        <div class="image"><img src="singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+        <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
         <h1>Vocalize </h1>
         <ul class="tabs">
             <li class = "tab is-active ">
-                <a href="practice2.html">Home</a>
+              <a href="Home.html">Home</a>
             </li>
             <li class = "tab" >
                 <a onclick="goBack()">Back</a>
-            </li>
-      
-            
+            </li>    
         </ul>
     </nav>
 </header>
@@ -31,20 +46,102 @@
     
     <a href="SingingBasics.html">Singing Basics</a>
     <a href="Soundref.html">Sound References</a>
+
 </div>
 
 
+<section2 class="pages">
+  
+  <h2>Some Videos</h2>
+    <br>
+    <br>
+  <ul class="tabs">
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/UaIvqrLCtSY"></iframe>
+      <br>
+      <br>
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/doWWkG2gPPE"></iframe>
+      <br>
+      <br>
+      <iframe width="420" height="315" src="https://www.youtube.com/embed/kXTkjMdgf7Q"></iframe>
+  </ul>
 
+</section2>
 
-<body>
-    <main>
+<section4 class="pages"> 
+        <div ng-controller="singalongController">
 
-    <section6 class="pages"> 
+     
 
-        <h1> Sing Along </h1>
-        <p> bla bla bla bla bla</p>
-    </section6>
-</main>
-    
+        <h2>Sing Along</h2>
+        <br>
+        <br>
+        <table border=1>
+              <tr>
+                
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Video</th>
+                <th>Watch it</th>
+              </tr>
+              <tr ng-repeat = "singalong in singalongs">
+                
+                <td>{{ singalong.Title }}</td>
+                <td>{{ singalong.Artist }}</td>
+                <td>{{ singalong.Genre }}</td>
+                <td><a href= "{{ singalong.Video}}" target="_blank">{{ singalong.Title }}</a></td>
+                <td><input type="button" ng-click="selectSingalong(singalong.S_Id)" value="Select"></td>
+                <td><input type="button" ng-click="deleteSingalong(singalong.S_Id)" value="Delete"></td>
+              </tr> 
+              <tr>
+                
+                <td><input type="text" ng-model="new_singalong.Title"></td>
+                <td><input type="text" ng-model="new_singalong.Artist"></td>
+                <td><input type="text" ng-model="new_singalong.Genre "></td>
+                <td><input type="text" ng-model="new_singalong.Video"></td>
+                
+                <td><input type="button" ng-click="createSingalong()" value="Create"></td>
+              
+                </tr>
+               
+            </table>
+
+            <br>
+            <br>
+
+            <div id="selected">
+              
+              <table border=1>
+              <tr>
+                
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Video</th>
+               
+              </tr>
+              <tr>
+                
+              
+              <td>{{ selectedSingalong.Title }}</td>
+              <td>{{ selectedSingalong.Artist }}</td>
+              <td>{{ selectedSingalong.Genre }}</td>
+              
+
+              <td><a href= "{{ selectedSingalong.Video}}">{{ selectedSingalong.Title }}</a></td>
+              <br>
+              
+              </tr>
+              </table>
+<br>
+<br>
+
+              <iframe width="420" height="315" src="{{ selectedSingalong.Video}}"></iframe>
+            </div>
+          </div>
+
+</section4>
+  
 </body>
+
 </html>

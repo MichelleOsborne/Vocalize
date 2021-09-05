@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS files/style.css">
+    <link rel="stylesheet" href="./CSS files/videobackground.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="./JS files/switch_views.js"></script>
+    <script src="./JS files/all_exercises.js"></script>
+    <script src="./JS files/all_objective_sound_level.js"></script>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+   
+    <script src ="./recorder/record.js"></script>
+    <script src="./recorder/recorder.js"></script>
+      
+   
+      </head>
+      <body>
+      
+      <video autoplay muted loop id="myVideo">
+        <source src="./video/black.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      
+         
+    <title>Singing Basics</title>
+</head>
+
+<header>
+    <nav>
+        <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+        <h1>Vocalize </h1>
+        <ul class="tabs">
+            <li class = "tab is-active ">
+              <a href="Home.html">Home</a>
+            </li>
+            <li class = "tab" >
+                <a onclick="goBack()">Back</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<div class="top">
+    
+    <a href="SingingBasics.html">Singing Basics</a>
+    <a href="Soundref.html">Sound References</a>
+    
+</div>
+
+
+<body ng-app="mainApp">
+    
+<section5 class="pages">
+            
+            <div  ng-controller="rangesoundlevel1Controller">
+            
+                <h1>Range Evaluation Task</h1>
+                <br>
+                <p>Test your self. 
+                    <br>
+                    <br>
+                <p>Read the instructions, Listen to the example, Try it out yourself using the different vocal sounds listed below.</p>
+
+                <br>
+                <br>
+  
+              <table border=1>
+                <tr>
+                  
+                  <th>Vocal Sound</th>
+                  
+                  <th>audio demo</th>
+  
+                </tr>
+                <tr ng-repeat = "rangesoundlevel in rangesoundlevels">
+                  
+                  <td>{{rangesoundlevel.Vocal_sound }}</td>
+                  
+                  <td><audio controls><source src="{{ rangesoundlevel.Audio_demo }}" type="audio/mpeg"></audio></td>
+                 
+                </tr>
+              </table>
+
+              <br>
+              
+           
+
+            <p>Then Rate yourself.</p> 
+            <p>1 = the task was quite difficult.</p>
+            <p>2 = the task was achievable but i need more practice.</p>
+            <p>3 = this task was very easy</p>
+
+            <br>
+
+
+            
+        <table border=1>
+               
+                <tr>
+                  <th>objective</th>
+                  <th>Introduction</th>
+                  <th>Listen</th>
+                  <th>Record yourself</th>
+                  <th>How did you do?</th>
+               
+                </tr>
+
+                <tr>
+                  
+                  <td>Range</td>             
+                  <td><p>Using any vocal sound you find comfortable. go up and down the scales changing the keys as you go along
+                      Rate yourself on how clear your scales were and how many key climbs you were able to do.</p> 
+                      <p>Level 1 - I ascended up the scales but couldnt descend or change scale keys</p>
+                      <p>Level 2 - I was able to ascend and decend through the scales on up to two keys</p> 
+                      <p>Level 3 - I was able to ascend, decend and randomly go through the scales. I was able to change the scale key a number of times</p>
+                  </td>
+                  
+                  <td><audio controls><source src="./audio/1.mp3" type="audio/mpeg"></audio></td>
+                
+                  <td> <div class="holder">
+                    <div data-role="controls">
+                      <button><img src="./images/mic2.jpg" width="90px" height="80px"></button>
+                    </div>
+                </div></td>
+                  
+                  <td><div class="dropdown">
+                    <button class="dropbtn">Rate</button>
+                    <div class="dropdown-content">
+                      
+                      <button id = 1 onclick="document.location='range1.html'">1</button>
+                      <button id = 2 onclick="document.location='range2.html'">2</button>
+                      <button id = 3 onclick="document.location='range3.html'">3</button>
+                   
+                      </div>
+                      </div>
+                  </td>
+
+                <tr>
+                  
+                  <td>Control</td>
+                  <td>
+                    <p>It is well established that practice is influencial in improving vocal ability.</p>
+                    <p>Listen to the example and try to copy. </p>
+                    <p>rate yourself. Were you able to complete each riff? did it sound the same? if yes rate the ease with which you were able to complete the task.
+                    <p>Level 1 - I wasnt able to do the runs successfully</p>
+                    <p>Level 2 - I was able to follow the runs but it didnt sound great </p>
+                    <p>Level 3 - I was able to follow the runs and it sounded great </p>
+                  </td>
+                  <td><audio controls><source src="./audio/3.mp3" type="audio/mpeg"></audio></td>
+                  <td> <div class="holder">
+                    <div data-role="controls">
+                      <button><img src="./images/mic2.jpg" width="90px" height="80px"></button>
+                    </div>
+                    </div>
+                  </td>
+                  <td><div class="dropdown">
+                    <button class="dropbtn">Rate</button>
+                    <div class="dropdown-content">
+                      
+                    <button id = 1 onclick="document.location='control1.html'">1</button>
+                    <button id = 2 onclick="document.location='control2.html'">2</button>
+                    <button id = 3 onclick="document.location='control3.html'">3</button>
+                    
+                    </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Tone</td>    
+                  <td>
+                    <p>Using any vocal sound you find comfortable. </p>
+                    <p>Perform a single note remaining on your most comfortable note for as long as you can.</p>
+                    <p>Rate yoursef depending on how long you can hold a full sound.</p>
+                    <p>Level 1 - Up to 10 seconds</p>
+                    <p>Level 2 - Up to 15 seconds</p>
+                    <p>Level 3 - Above 20 seconds</p>
+                    </td> 
+
+                    <td><audio controls><source src="./audio/2.mp3" type="audio/mpeg"></audio></td>
+                    
+                    <td> <div class="holder">
+                      <div data-role="controls">
+                        <button><img src="./images/mic2.jpg" width="90px" height="80px"></button>
+                      </div>
+                      
+                      </div>
+                    </td>
+                    <td><div class="dropdown">
+                      <button class="dropbtn">Rate</button>
+                      <div class="dropdown-content">
+                        
+                        <button id = 1 onclick="document.location='range1.html'">1</button>
+                        <button id = 2 onclick="document.location='range2.html'">2</button>
+                        <button id = 3 onclick="document.location='range3.html'">3</button>
+                     
+                        </div>
+                        </div>
+                    </td>
+                               
+                </tr>
+
+                <tr>
+                  <td>Pitch</td>
+                  <td>
+                    <p>Using the La vocal sound try to perform  a siren sound.</p>
+                    <p>Rate yoursef on your abilty to perform the full sound and its clarity.</p>
+                    <p>Level 1 - i couldnt make the siren sound</p>
+                    <p>Level 2 - I was able to do one full sirent but couldnt replecated on another key.</p>
+                    <p>Level 3 - I was able to do a siren using different vocal sounds ascending and decending across different keys.</p>
+                  </td>
+                 
+                  <td><audio controls><source src="./audio/4.mp3" type="audio/mpeg"></audio></td>
+             
+
+                  <td> <div class="holder">
+                    <div data-role="controls">
+                       
+                        <button><img src="./images/mic2.jpg" width="90px" height="80px"></button>
+                    </div>
+                    
+                  </div>
+                  </td>
+                  </td>
+
+                  <td><div class="dropdown">
+                    <button class="dropbtn">Rate</button>
+                    <div class="dropdown-content">
+                      
+                    <button id = 1 onclick="document.location='pitch.html'">1</button>
+                    <button id = 2 onclick="document.location='pitch.html'">2</button>
+                    <button id = 3 onclick="document.location='pitch.html'">3</button>
+                    
+                    </div>
+                  </div>
+                </td>
+                
+                </tr>
+
+
+               </table>
+            
+          </div>
+           </div>    
+
+</section5>
+
+<section6 class="pages">
+           
+    
+  <div class="time-select">
+    <button data-time="60" >1 Minutes</button>
+    <button data-time="120" >2 Minutes</button>
+    <button data-time="180"> 5 Minutes</button>
+    <h3 id ="title" class="time-display" style="font-size:5vw">0:00</h3> 
+</div>
+
+
+<button id ="my-button">Stopwatch</button>
+<button  onclick="Start()" >Start</button>
+<button onclick="endCount()">Stop</button>
+
+
+<br>
+<br>
+<br>
+
+
+<div data-role="recordings"></div>
+
+
+<script src="./JS files/timer1.js"></script>
+</section6>
+
+    
+</body>
+</html>

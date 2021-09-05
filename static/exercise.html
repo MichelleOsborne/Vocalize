@@ -1,0 +1,260 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+
+    <link rel="stylesheet" href="./CSS files/style.css">
+    <link rel="stylesheet" href="./CSS files/videobackground.css">
+    
+    <script src="./JS files/switch_views.js"></script>
+    <script src="student.js"></script>
+    <script src="./JS files/ob_exercise.js"></script>
+    <header>
+   
+      <nav>
+          <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+          <h1>All Exercises</h1>
+          <ul class="tabs">
+              <li class = "tab is-active ">
+                <a href="Home.html">Home</a>
+              </li>
+              <li class = "tab" >
+                  <a onclick="goBack()">Back</a>
+              </li>
+        
+              
+          </ul>
+      </nav>
+  </header>
+
+  <body ng-app="mainApp">
+  
+    <video autoplay muted loop id="myVideo">
+      <source src="./video/black.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    
+       
+  
+  
+  
+  <div class="top">
+      
+      <a href="SingingBasics.html">Singing Basics</a>
+      <a href="Soundref.html">Sound References</a>
+  
+  </div>
+  <section8 class="pages">
+    <p>Using any vocal sound you are most comfortable with </p>
+    <br>
+    <br>
+    <p>Follow the instructions below and use the scales on the right for guidance.</p>
+    <br>
+    <p>Or go to the desired Start pages for more audio examples </p>
+    <br>
+    <br>
+  </section8>
+  
+          <section3 class="pages">
+              <ul class="tabs">
+                  <button class="button2"><li class = "tab is-active "><a data-one data-tab ="1">BEGINNER</a></li></button>
+                  <button class="button2"><li class = "tab"><a data-one data-tab ="2">INTERMEDITE</a></li></button>
+                  <button class="button2"><li class = "tab"><a data-one data-tab ="3">ADVANCED</a></li></button>
+                  
+                   
+              </ul>
+
+              <br>
+              <br>
+              <div class="time-select">
+                <button data-time="60" >1 Minutes</button>
+                <button data-time="120" >2 Minutes</button>
+                <button data-time="180"> 5 Minutes</button>
+                <h3 id ="title" class="time-display" style="font-size:5vw">0:00</h3> 
+            </div>
+            
+            
+            <button id ="my-button">Stopwatch</button>
+            <button  onclick="Start()" >Start</button>
+            <button onclick="endCount()">Stop</button>
+            
+            
+            
+            <script src="./JS files/timer1.js"></script>
+
+          </section3>
+  
+
+
+
+        <section4 class="pages">
+
+        <div class = "page is-active" data-page="1">
+            
+            <div ng-controller="obexercise1Controller">
+  
+              
+  
+              <table border=1>
+                <tr>
+                  <th>objective</th>
+                  <th>Exercise</th>
+                  <th>Level</th>
+                  <th>Description</th>
+                  <th>Start</th>
+                  
+                  
+                </tr>
+                <tr ng-repeat = "obexerciselevel in obexerciselevels">
+                  <td>{{ obexerciselevel.Ob_Name}}</td>
+                  <td>{{ obexerciselevel.Ex_Name }}</td>
+                  <td>{{ obexerciselevel.Level }}</td>
+                  <td>{{ obexerciselevel.DESCRIPTION }}</td>               
+                  
+                  <td><a href= "{{obexerciselevel.start}}" >{{obexerciselevel.start}}</a></td>
+
+
+                  
+                </tr>
+                                        
+          </table>
+  
+               
+          
+        </div>
+  
+            </div>
+              
+            
+                  
+            <div class = "page" data-page="2">
+  
+              
+                <div ng-controller="obexercise2Controller">
+  
+              
+  
+                    <table border=1>
+                      <tr>
+                        <th>objective</th>
+                        <th>Exercise</th>
+                        <th>Level</th>
+                        <th>Description</th>
+                        <th>Start</th>
+                        
+                        
+                      </tr>
+                      <tr ng-repeat = "obexerciselevel in obexerciselevels">
+                        <td>{{ obexerciselevel.Ob_Name}}</td>
+                        <td>{{ obexerciselevel.Ex_Name }}</td>
+                        <td>{{ obexerciselevel.Level }}</td>
+                        <td>{{ obexerciselevel.DESCRIPTION }}</td>
+                        
+                        <td><a href= "{{obexerciselevel.start}}" >{{obexerciselevel.start}}</a></td>
+      
+      
+                        
+                      </tr>
+                                              
+                </table>
+        
+                     
+          
+              </div>
+            </div>
+              
+          
+             
+          <div class = "page" data-page="3"> 
+          <div ng-controller="obexercise3Controller">
+  
+              
+  
+            <table border=1>
+              <tr>
+                <th>objective</th>
+                <th>Exercise</th>
+                <th>Level</th>
+                <th>Description</th>
+                <th>Start</th>
+                
+                
+              </tr>
+              <tr ng-repeat = "obexerciselevel in obexerciselevels">
+                <td>{{ obexerciselevel.Ob_Name}}</td>
+                <td>{{ obexerciselevel.Ex_Name }}</td>
+                <td>{{ obexerciselevel.Level }}</td>
+                <td>{{ obexerciselevel.DESCRIPTION }}</td>
+                
+                
+                <td><a href= "{{obexerciselevel.Start}}" >{{obexerciselevel.start}}</a></td>
+
+
+                
+              </tr>
+                                      
+        </table>
+
+             
+            </div>
+          </div>
+       
+
+
+        </div>  
+          </section4>
+
+        <section3 class="pages">
+  
+  
+  
+        
+          <h1>Scales</h1>
+      
+ 
+  
+  <button class="button2" onclick=" a.play();" type="button">A</button>
+  <button class="button2" onclick=" b.play();" type="button">B</button>
+  <button class="button2" onclick=" c.play();" type="button">C</button>
+  <button class="button2" onclick=" d.play();" type="button">D</button>
+  
+  
+  <audio id="myAudio1"><source src="./sounds/Scales_A.mp3"  type="audio/mp3"></audio>
+  <audio id="myAudio2"><source src="./sounds/Scales_B.mp3"  type="audio/mp3"></audio>
+  <audio id="myAudio3"><source src="./sounds/Scales_C.mp3"  type="audio/mp3"></audio>
+  <audio id="myAudio4"><source src="./sounds/Scales_D.mp3"  type="audio/mp3"></audio>
+          
+        
+          
+  <button class ="button" onclick="pauseAudio()" type="button">Pause Audio</button> 
+          
+  
+  
+  </div>
+  
+          <script>
+          var a = document.getElementById("myAudio1"); 
+          var b = document.getElementById("myAudio2"); 
+          var c = document.getElementById("myAudio3"); 
+          var d = document.getElementById("myAudio4"); 
+          
+    
+          
+          function pauseAudio() { 
+            a.pause(); 
+            b.pause(); 
+            c.pause(); 
+            d.pause(); 
+          } 
+          </script>
+         
+          </section3>
+         
+  
+      
+  </body>
+  </html>

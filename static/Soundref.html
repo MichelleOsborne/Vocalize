@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="practice.css">
-    <script src="practice.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <link rel="stylesheet" href="./CSS files/style.css">
+    <script src="./JS files/switch_views.js"></script>
+    <script src="./JS files/all_vocal_sounds.js"></script>
+    <script src="student.js"></script>
+    
 
     <title>Sound References</title>
 </head>
 
 <header>
     <nav>
-        <div class="image"><img src="singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
+        <div class="image"><img src="./images/singer.jpg" alt="singer" style="width: 250px;height:140px;"></div>
         <h1>Vocalize </h1>
         <ul class="tabs">
             <li class = "tab is-active ">
-                <a href="practice2.html">Home</a>
+                <a href="Home.html">Home</a>
             </li>
             <li class = "tab" >
                 <a onclick="goBack()">Back</a>
@@ -30,20 +34,45 @@
 <div class="top">
     
     <a href="SingingBasics.html">Singing Basics</a>
-    <a href="Soundref.html">Sound References</a>
+    
 </div>
 
 
 
 
 <body>
-    <main>
+    
 
-    <section6 class="pages"> 
+    <section5 class="pages"> 
 
         <h1> Sound References </h1>
-        <p> bla bla bla bla bla</p>
-    </section6>
+        <br>
+        
+        
+        <p> Listen to the sounds</p>
+        <br>
+
+       <br>
+
+
+       <div ng-app="mainApp" ng-controller="vocalsoundController">
+        <table border=1>
+          <tr>
+            <th>Vocal Sounds</th>
+            <th>Demonstrations</th>
+            
+            
+          </tr>
+          <tr ng-repeat = "vocalsound in vocalsounds">
+            <td>{{ vocalsound.Vocal_sound }}</td>
+            <td><audio controls><source src="{{ vocalsound.Audio_demo }}" type="audio/mpeg"></audio></td>
+            
+    </tr>
+</table>
+      
+
+            
+    </section5>
 </main>
     
 </body>
