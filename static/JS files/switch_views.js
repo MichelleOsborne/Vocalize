@@ -1,3 +1,5 @@
+//code explained in report
+
 window.onload = () => {
     const tab_switchers = document.querySelectorAll('[data-one]');
 
@@ -14,7 +16,6 @@ tab_switcher.addEventListener('click',() => {
 });
 }
 }
-
 function SwitchPage(page_id){
 
     const current_page = document.querySelector('.pages .page.is-active');

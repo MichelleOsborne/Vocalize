@@ -13,7 +13,7 @@ mainApp.controller("singalongController", function($scope, $http) {
       });   
 
       $scope.selectSingalong = function(S_Id) {
-        // Get specific programme by code
+        // Get specific song by s_Id
         $http.get("/Singalongs/" + S_Id).then(function(response) {
           $scope.selectedSingalong = response.data;
           // Show the "selected" element
@@ -22,9 +22,9 @@ mainApp.controller("singalongController", function($scope, $http) {
     };
   
   $scope.deleteSingalong = function(S_Id) {
-    // Send delete message to /module/code
+    // Send delete message to /singalong/S_Id
     $http.delete("/singalongs/" + S_Id).then(function(response) {
-      // When request completes, refresh list of modules
+      // When request completes, refresh list of songs
       $http.get("/singalongs/").then(function(response) {
         $scope.singalongs = response.data;
       });
@@ -34,11 +34,11 @@ mainApp.controller("singalongController", function($scope, $http) {
 
   // Sends a put message to the server
   $scope.createSingalong = function() {
-    // Send post message to /modules
+    // Send post message to /singalong
     $http.post("/singalongs", $scope.new_singalong).then(function(response) {
-      // When request completes, reset new_module
+      // When request completes, reset new_singalong
       $scope.new_singalong = new Singalong("", "");
-      // Then refresh list of modules
+      // Then refresh list of singalongs
       $http.get("/singalongs").then(function(response) {
         $scope.singalongs = response.data;
       });

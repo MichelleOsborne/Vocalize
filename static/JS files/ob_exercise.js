@@ -6,7 +6,7 @@ mainApp.controller("obexerciseController", function($scope, $http) {
   });
 });
 
-
+//on particular endpoint bind data collected in data
 mainApp.controller("obexercise1Controller", function($scope, $http) {
   $http.get('/obexercises/1').then(function(response) {
     $scope.obexerciselevels = response.data;
